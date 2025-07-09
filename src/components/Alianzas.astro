@@ -1,0 +1,114 @@
+---
+// src/components/Alianzas.astro
+// VERSIÓN SIN JQUERY Y SIN JS
+---
+<article class="alianzasIndex">
+  <div class="container">
+      <div class="row">
+          <h2 class="text-center animado animacionS">Alianzas</h2>
+          <section class="col-12 col-lg-11">
+              <div class="textoAlianzas animado animacionS">
+                  <p>
+                      Penthouse Studio pertenece al grupo empresarial
+                      más reconocido...
+                  </p>
+              </div>
+              
+              <div class="slider-css">
+                  <div class="slide-track-css">
+                      <div class="slide-css">
+                          <img src="/images/alianzas/logoGrupoBedoya.png" alt="Grupo Bedoya" />
+                      </div>
+                      <div class="slide-css">
+                          <img src="/images/alianzas/logoTrendStudios.png" alt="Trend Studios" />
+                      </div>
+                      <div class="slide-css">
+                          <img src="/images/alianzas/logoVIPStudioCali.png" alt="VIP Studio Cali" />
+                      </div>
+                      <div class="slide-css">
+                          <img src="/images/alianzas/logoImgGroup.png" alt="IMG Group" />
+                      </div>
+                      <div class="slide-css">
+                          <img src="/images/alianzas/logoGrupoBedoya.png" alt="Grupo Bedoya" />
+                      </div>
+                      <div class="slide-css">
+                          <img src="/images/alianzas/logoTrendStudios.png" alt="Trend Studios" />
+                      </div>
+                      <div class="slide-css">
+                          <img src="/images/alianzas/logoVIPStudioCali.png" alt="VIP Studio Cali" />
+                      </div>
+                      <div class="slide-css">
+                          <img src="/images/alianzas/logoImgGroup.png" alt="IMG Group" />
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div>
+  </div>
+</article>
+
+<style>
+  /* El @keyframes define la animación de scroll */
+  @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+  }
+
+  .slider-css {
+      background: transparent;
+      box-shadow: none;
+      height: 160px;
+      margin: auto;
+      overflow: hidden; /* Oculta lo que se sale del contenedor */
+      position: relative;
+      width: 100%;
+  }
+  
+  .slider-css::before,
+  .slider-css::after {
+      /* Opcional: Un degradado suave en los bordes para que los logos aparezcan y desaparezcan suavemente */
+      background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 15%;
+      z-index: 2;
+  }
+  .slider-css::before {
+      left: 0;
+      top: 0;
+  }
+  .slider-css::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+  }
+  
+  .slide-track-css {
+      /* La animación dura 40s, es lineal (velocidad constante) e infinita */
+      animation: scroll 40s linear infinite;
+      display: flex;
+      /* El ancho es el doble porque duplicamos los logos (4 logos * 2 = 8) */
+      width: calc(250px * 8); 
+  }
+  
+  .slide-track-css:hover {
+      /* Pausa la animación cuando el ratón está encima */
+      animation-play-state: paused;
+  }
+
+  .slide-css {
+      height: 160px;
+      width: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+  }
+  
+  .slide-css img {
+      max-width: 100%;
+      height: auto;
+      max-height: 140px; /* Ajusta la altura máxima de los logos */
+  }
+</style>

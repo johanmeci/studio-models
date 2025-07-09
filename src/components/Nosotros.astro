@@ -1,0 +1,84 @@
+---
+// src/components/Nosotros.astro (Versión Final Corregida)
+---
+<article class="nosotrosIndex" id="nosotrosIndex">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center animado animacionS">Nosotros</h2>
+            <div class="contenedorNosotros col-12 col-lg-11">
+                <section class="col-12 col-sm-10 col-md-6 animado animacionS">
+                    <p class="text-justify">
+                        Estudio Penthouse es un lugar único, donde la experiencia, la calidad y la comodidad son prioridades. Somos un estudio que se encarga de brindarle a sus modelos webcams todo lo que necesitan para lograr su éxito. Es un lugar donde la experiencia, la calidad y la comodidad son prioridades.
+                    </p>
+                </section>
+                <section class="contenedorSlider col-12 col-sm-10 col-md-6 animado animacionS" id="contenedorSlider">
+                    <div class="sliderNosotrosIndex" id="sliderNosotrosIndex" style="position: relative; width: 100%; background-image: url(/images/nosotros/nosotros.png); background-size: cover; background-position: center;">
+                        <div class="slide1"></div>
+                        <div class="slide2"></div>
+                        <div class="slide3"></div>
+                        <div class="slide4"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</article>
+
+<script>
+    // <script> del componente Nosotros.astro (Versión con optimización final)
+
+const slider = document.getElementById("sliderNosotrosIndex");
+
+// La función ahora recibe el 'target' como argumento para ser más reutilizable
+function ajustarLayout(target) {
+    if (!target) return;
+    
+    const ancho = target.offsetWidth;
+    target.style.height = `${ancho}px`;
+    
+    const slides = target.querySelectorAll('[class^="slide"]');
+    const altoDeSlide = ancho / 4;
+
+    slides.forEach((slide, index) => {
+        slide.style.height = `${altoDeSlide}px`;
+        slide.style.top = `${index * altoDeSlide}px`;
+    });
+}
+
+if (slider) {
+    const imagenes = ["nosotros2.png", "nosotros.png"];
+    let indiceActual = 0;
+
+    function cambiarImagen() {
+        indiceActual = (indiceActual + 1) % imagenes.length;
+        slider.style.backgroundImage = `url(/images/nosotros/${imagenes[indiceActual]})`;
+    }
+
+    function animarSlider() {
+        slider.classList.add("outNosotros");
+        
+        setTimeout(() => {
+            cambiarImagen();
+            slider.classList.remove("outNosotros");
+        }, 900);
+    }
+
+    // --- INICIALIZACIÓN MEJORADA ---
+
+    // 1. Creamos un "observador" que ejecutará nuestra función de ajuste.
+    const observer = new ResizeObserver(entries => {
+        // 'entries' es un array de todos los elementos que cambiaron.
+        // Como solo observamos uno, nos quedamos con el primero.
+        for (const entry of entries) {
+            ajustarLayout(entry.target);
+        }
+    });
+
+    // 2. Le decimos al observador que "vigile" nuestro slider.
+    // Esto también llama a ajustarLayout() una vez al inicio, automáticamente.
+    observer.observe(slider);
+
+    // 3. Iniciamos el carrusel de imágenes como antes.
+    setInterval(animarSlider, 4000);
+}
+</script>
