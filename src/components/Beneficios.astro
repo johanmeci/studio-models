@@ -1,0 +1,147 @@
+---
+// src/components/Beneficios.astro
+---
+<article class="beneficiosIndex">
+  <div class="container">
+      <div class="row">
+          <h2 class="text-center animado animacionS">Beneficios</h2>
+
+          <article class="beneficiosMobile col-12">
+              <section class="cardUno col-12 col-sm-7 animado animacionS">
+                  <div class="imgTop"></div>
+                  <div class="bodyCard">
+                      <h5 class="text-center">Instalaciones</h5>
+                      <p class="text-justify">
+                          Penthouse Studio ha sido diseñado con un estilo elegante y moderno...
+                      </p>
+                  </div>
+              </section>
+              <section class="cardUno col-12 col-sm-7 animado animacionS">
+                  <div class="imgTop"></div>
+                  <div class="bodyCard">
+                      <h5 class="text-center">Acompañamiento</h5>
+                      <p class="text-justify">
+                          La compañía y el asesoramiento van a estar presentes en todo momento...
+                      </p>
+                  </div>
+              </section>
+              <section class="cardUno col-12 col-sm-7 animado animacionS">
+                  <div class="imgTop"></div>
+                  <div class="bodyCard">
+                      <h5 class="text-center">Proyecto de Vida</h5>
+                      <p class="text-justify">
+                          En Penthouse Studio también nos interesa que usted logre sus objetivos personales...
+                      </p>
+                  </div>
+              </section>
+          </article>
+
+          <article class="beneficiosDesktop col-12 col-lg-11">
+              <div class="contenedorBeneficios">
+                  <div class="beneficio activo animado animacionS">
+                      <div class="imgBeneficio" id="imgBeneficio" style="background-image: url(/images/beneficios/imgBeneficios02.jpg);">
+                          <div class="slideImg1"></div>
+                          <div class="slideImg2"></div>
+                          <div class="slideImg3"></div>
+                          <div class="slideImg4"></div>
+                      </div>
+                      <div class="txtBeneficio" id="tituloBeneficio">
+                          <h3>Acompañamiento</h3>
+                          <p class="text-justify">La compañía y el asesoramiento van a estar presentes en todo momento, pues es de grán importancia para nosotros que usted tenga éxito no solamente como modelo webcam, si no también con su proyecto de vida</p>
+                          <h4>Detalles</h4>
+                          <p>El grupo de trabajo por el que va a estar rodeada esta diseñado para su constante crecimiento como modelo webcam, siempre que usted este comprometida</p>
+                          <div class="slideTxt1"></div>
+                          <div class="slideTxt2"></div>
+                          <div class="slideTxt3"></div>
+                          <div class="slideTxt4"></div>
+                      </div>
+                      <div class="nextBeneficios">
+                          <a id="btnSiguienteBeneficio">
+                              <span>Siguiente</span>
+                              <img src="/images/icon/iconNext.svg" alt="icon next">
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </article>
+
+      </div>
+  </div>
+</article>
+
+<script>
+    // 1. LOS DATOS: Un único array de objetos. ¡Mucho más limpio!
+    const beneficios = [
+        {
+            imagen: 'imgBeneficios02.jpg',
+            titulo: 'Acompañamiento',
+            subtitulo: 'Detalles',
+            texto1: 'La compañía y el asesoramiento van a estar presentes en todo momento, pues es de grán importancia para nosotros que usted tenga éxito no solamente como modelo webcam, si no también con su proyecto de vida',
+            texto2: 'El grupo de trabajo por el que va a estar rodeada esta diseñado para su constante crecimiento como modelo webcam, siempre que usted este comprometida'
+        },
+        {
+            imagen: 'imgBeneficios03.jpg',
+            titulo: 'Proyecto de Vida',
+            subtitulo: 'Detalles',
+            texto1: 'En Penthouse Studio también nos interesa que usted logre sus objetivos personales, es por lo anterior que disponemos del area de recursos humanos quienes se encargarán de brindarle el apoyo necesario en cada uno de sus propositos',
+            texto2: 'Nosotros le brindamos nuestra ayuda siempre y cuando usted como modelo se comprometa con nosotros a brindarnos su dedicación y responsabilidad'
+        },
+        {
+            imagen: 'imgBeneficios01.jpg',
+            titulo: 'Instalaciones',
+            subtitulo: 'Detalles',
+            texto1: 'Penthouse Studio ha sido diseñado con un estilo elegante y moderno, con la finalidad de crear una atmosfera de trabajo comoda y agradable en la que usted pueda desempeñarse de la mejor manera, pues tiene a su disposición las áreas de entretenimiento, espacios en los que puede compartir con sus compañeros',
+            texto2: 'Disponemos de amplios cuartos creados para su comodidad; con diferentes temáticas para que usted pueda darle variedad a sus transmisiones'
+        }
+    ];
+
+    // 2. EL ESTADO: Una variable que nos dice qué beneficio mostrar.
+    let indiceActual = 0;
+    const duracionAnimacion = 900; // ms
+
+    // 3. ELEMENTOS DEL DOM
+    const imgBeneficioEl = document.getElementById("imgBeneficio");
+    const tituloBeneficioEl = document.getElementById("tituloBeneficio");
+    const btnSiguiente = document.getElementById("btnSiguienteBeneficio");
+    const beneficioActivo = document.querySelector('.beneficio.activo');
+
+    // 4. LÓGICA DE RENDERIZADO: Una función que actualiza el HTML.
+    function renderBeneficio(index) {
+        const beneficio = beneficios[index]; // Obtiene el objeto del beneficio actual
+        
+        if (!beneficio || !imgBeneficioEl || !tituloBeneficioEl) return; // Salida segura
+
+        imgBeneficioEl.style.backgroundImage = `url(/images/beneficios/${beneficio.imagen})`;
+        tituloBeneficioEl.querySelector('h3').textContent = beneficio.titulo;
+        tituloBeneficioEl.querySelector('h4').textContent = beneficio.subtitulo;
+        tituloBeneficioEl.querySelectorAll('p')[0].textContent = beneficio.texto1;
+        tituloBeneficioEl.querySelectorAll('p')[1].textContent = beneficio.texto2;
+    }
+
+    // 5. LÓGICA DE EVENTOS: La función que se ejecuta al hacer click.
+    function manejarClickSiguiente() {
+        if (!beneficioActivo) return;
+
+        // Inicia la animación de salida
+        beneficioActivo.classList.add("outBeneficio");
+
+        setTimeout(() => {
+            // Actualiza el índice, volviendo al inicio si llega al final
+            indiceActual = (indiceActual + 1) % beneficios.length;
+            
+            // Llama a la función de renderizado con el nuevo índice
+            renderBeneficio(indiceActual);
+            
+            // Quita la clase para la animación de entrada
+            beneficioActivo.classList.remove("outBeneficio");
+        }, duracionAnimacion);
+    }
+
+    // 6. INICIALIZACIÓN
+    if (btnSiguiente) {
+        btnSiguiente.addEventListener('click', manejarClickSiguiente);
+    }
+    // Renderiza el primer beneficio al cargar el script
+    renderBeneficio(indiceActual);
+
+</script>
