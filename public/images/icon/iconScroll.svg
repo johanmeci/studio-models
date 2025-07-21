@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.38 37.35">
+<defs>
+<style>
+.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;animation: animacionCl1 2s ease infinite;stroke-width:2px;}.cls-2{fill:#fff; animation: animacionCl2 2s ease infinite;}
+@keyframes animacionCl2{
+    from{
+        transform:translateY(0);
+        fill:rgba(255,255,255,1);
+    }
+    50%{
+        transform:translateY(2px);
+        fill:rgba(255,255,255,0.3);
+    }
+    to{
+        transform:translateY(0);
+        fill:rgba(255,255,255,1);
+    }
+}
+@keyframes animacionCl1{
+    from{
+        stroke:rgba(255,255,255,1);
+    }
+    50%{
+        stroke:rgba(255,255,255,0.3);
+    }
+    to{
+        stroke:rgba(255,255,255,1);
+    }
+}
+</style>
+</defs>
+<title>iconScroll_1</title>
+<g id="Capa_2" data-name="Capa 2">
+    <g id="Capa_1-2" data-name="Capa 1">
+        <rect class="cls-1" x="0.5" y="0.5" width="21.38" height="36.35" rx="10.69" ry="10.69"/>
+        <rect class="cls-2" x="10.19" y="5.5" width="2" height="10" rx="1" ry="1"/>
+    </g>
+</g>
+</svg>
