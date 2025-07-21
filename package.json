@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.2.2",
     "astro": "^5.11.0",
     "glightbox": "^3.3.1",
     "resend": "^4.6.0"
