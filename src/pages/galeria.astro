@@ -58,11 +58,13 @@ const modelosImages = [
   }
 </style>
 
-<script>
-  import GLightbox from 'glightbox';
-  GLightbox({
-    selector: '.glightbox',
-    touchNavigation: true,
-    loop: true,
+<script src="/js/glightbox.min.js" is:inline></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+    });
   });
 </script>

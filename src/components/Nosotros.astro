@@ -22,18 +22,21 @@
 </article>
 
 <script>
-const slider = document.getElementById("sliderNosotrosIndex");
+// Type assertion for the slider element
+const slider = document.getElementById("sliderNosotrosIndex") as HTMLElement | null;
 
-function ajustarLayout(target) {
+// Function to adjust layout based on container width
+function ajustarLayout(target: HTMLElement) {
     if (!target) return;
     
     const ancho = target.offsetWidth;
     target.style.height = `${ancho}px`;
     
-    const slides = target.querySelectorAll('[class^="slide"]');
+    // Type the NodeList as an array of HTMLElements
+    const slides = Array.from(target.querySelectorAll('[class^="slide"]')) as HTMLElement[];
     const altoDeSlide = ancho / 4;
 
-    slides.forEach((slide, index) => {
+    slides.forEach((slide: HTMLElement, index: number) => {
         slide.style.height = `${altoDeSlide}px`;
         slide.style.top = `${index * altoDeSlide}px`;
     });
@@ -44,30 +47,42 @@ if (slider) {
     let indiceActual = 0;
 
     function cambiarImagen() {
+        if (!slider) return;
         indiceActual = (indiceActual + 1) % imagenes.length;
         slider.style.backgroundImage = `url(/images/nosotros/${imagenes[indiceActual]})`;
     }
 
     function animarSlider() {
+        if (!slider) return;
         slider.classList.add("outNosotros");
         
         setTimeout(() => {
             cambiarImagen();
-            slider.classList.remove("outNosotros");
+            if (slider) {
+                slider.classList.remove("outNosotros");
+            }
         }, 900);
     }
 
-    const observer = new ResizeObserver(entries => {
-        for (const entry of entries) {
-            ajustarLayout(entry.target);
-        }
-        for (const entry of entries) {
-            ajustarLayout(entry.target);
-        }
+    // Type the ResizeObserver callback
+    const observer = new ResizeObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.target instanceof HTMLElement) {
+                ajustarLayout(entry.target);
+            }
+        });
     });
 
+    // Start observing the slider
     observer.observe(slider);
 
-    setInterval(animarSlider, 4000);
+    // Set up the animation interval
+    const intervalId = setInterval(animarSlider, 4000);
+
+    // Clean up the interval and observer when the component is destroyed
+    document.addEventListener('astro:before-unmount', () => {
+        clearInterval(intervalId);
+        observer.disconnect();
+    });
 }
 </script>
