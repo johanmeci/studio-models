@@ -1,6 +1,5 @@
 ---
 import '../styles/master.css';
-import 'glightbox/dist/css/glightbox.min.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
@@ -19,6 +18,7 @@ const { title } = Astro.props;
   <title>{title}</title>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/glightbox.min.css">
 
   <script is:inline src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}></script>
 </head>
@@ -34,7 +34,8 @@ const { title } = Astro.props;
   <slot />
   <Footer />
 
-  <script src="../scripts/scroll-animation.js"></script>
+  <script src="/js/scroll-animation.js" is:inline></script>
+  
   <script>
     window.addEventListener('load', () => {
       setTimeout(() => {
