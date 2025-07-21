@@ -3,7 +3,79 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import ContactoForm from '../components/ContactoForm.astro';
 ---
-<MainLayout title="Contacto">
-    <h1>Página de Contacto</h1>
-    <ContactoForm client:visible />
+<MainLayout title="Studio Models | Contacto">
+    <section class="bienvenidosPrincipal Contacto">
+        <section class="textoPrincipal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="contenidoTexto loaded">
+                            <div class="textoH1"><h1>Contacto</h1></div>
+                            <div class="textoH6"><h6>¿Está lista para ser parte de nuestro grupo de trabajo y hacer sus sueños realidad?</h6></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flechaBajar Index text-center">
+            <a class="flcBajar" href="#contactoPrincipal">
+                <img src="/images/icon/iconScroll.svg" alt="icon scroll">
+            </a>
+        </section>
+        <section class="imgP"></section>
+    </section>
+
+    <main class="contactoPrincipal" id="contactoPrincipal">
+        <div class="container">
+            <div class="row">
+                <div id="formulario" class="col-sm-11 col-md-6 col-lg-5">
+                    <h2 class="text-center animado">Contáctenos</h2>
+                    <ContactoForm client:visible />
+                </div>
+                <div class="info col-sm-11 col-md-6 col-lg-5 animado">
+                    <article>
+                        <p class="text-justify">
+                            Escríbanos y nos comunicaremos con usted, además del formulario puede contactarse con nosotros por WhatsApp, Facebook o a info@estudiopenthouse.com, le aseguramos proteger su anonimato y privacidad en todas nuestras comunicaciones.
+                        </p>
+                        <h4 class="text-center">
+                            ESTAREMOS ATENTOS DE RESPONDER TODAS SUS INQUIETUDES
+                        </h4>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
 </MainLayout>
+
+<style>
+    /* Estilos específicos para la página de Contacto */
+    .contactoPrincipal {
+        border-top: 2px solid #47254F;
+        padding: 1rem 0 2rem 0;
+        background-color: #0d0e19;
+    }
+    .contactoPrincipal h2 {
+        font-weight: 300;
+        font-size: 2.3rem;
+        width: 100%;
+        background-image: linear-gradient(to right, #cb9f3d, #fffc9e, #c9ae2d, #e7d074, #d5b150, #dfc793, #c8953e);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .info {
+        padding-top: 4.3rem; /* Ajuste para alinear con el formulario */
+    }
+    .info p, .info h4 {
+        font-weight: 100;
+    }
+
+    /* Estilos de la sección de bienvenida */
+    .bienvenidosPrincipal.Contacto .imgP {
+        background-image: url(/images/backgrounds/hero_contacto2.jpg);
+        background-attachment: fixed;
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>

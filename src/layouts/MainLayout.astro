@@ -1,11 +1,10 @@
 ---
-// src/layouts/MainLayout.astro
-
-// Importamos el CSS principal para que Astro lo procese y optimice.
 import '../styles/master.css';
+import 'glightbox/dist/css/glightbox.min.css';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 
-// Aquí podemos definir props, como el título de la página
 export interface Props {
 	title: string;
 }
@@ -14,49 +13,38 @@ const { title } = Astro.props;
 ---
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{title}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>{title}</title>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script is:inline src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}></script>
+</head>
+<body class="body loaded">
+  <!-- <div id="loaderScreen">
+      <div id="loader">
+          <object data="/images/logoPhLoad.svg">
+              <embed src="/images/logoPhLoad.svg">
+          </object>
+      </div>
+  </div> -->
+  <Header />
+  <slot />
+  <Footer />
 
-    </head>
-<body class="body">
-    <!-- <div id="loaderScreen">
-        <div id="loader">
-            <object data="/images/logoPhLoad.svg">
-                <embed src="/images/logoPhLoad.svg">
-            </object>
-        </div>
-    </div> -->
-    
-    <Header />
-
-    <slot />
-
-    <footer class="footer">
-        <div class="container">
-            ... todo tu footer HTML va aquí ...
-        </div>
-    </footer>
-    
-    <script src="../scripts/scroll-animation.js"></script>
-
-    <script>
-      // Script del Loader
-      window.addEventListener('load', () => {
-          setTimeout(() => {
-              document.body.classList.add('loaded');
-              const contenidoTexto = document.querySelector('.textoPrincipal .contenidoTexto');
-              if (contenidoTexto) {
-                  contenidoTexto.classList.add('loaded');
-              }
-          }, 2000); // Mantenemos el retardo original, pero puedes ajustarlo
-      });
+  <script src="../scripts/scroll-animation.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.body.classList.add('loaded');
+        const contenidoTexto = document.querySelector('.textoPrincipal .contenidoTexto');
+        if (contenidoTexto) {
+          contenidoTexto.classList.add('loaded');
+        }
+      }, 2000);
+    });
   </script>
-
-    </body>
+</body>
 </html>

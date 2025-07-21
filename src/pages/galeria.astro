@@ -1,0 +1,68 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import GalleryGrid from '../components/GalleryGrid.astro';
+
+const modelosImages = [
+  "/images/gallery/modelos/imgModelo01.jpg",
+  "/images/gallery/modelos/imgModelo02.jpg",
+  "/images/gallery/modelos/imgModelo03.jpg",
+];
+---
+
+<MainLayout title="Studio Models | Galería">
+  <section class="bienvenidosPrincipal Galeria">
+    <section class="textoPrincipal">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="contenidoTexto loaded">
+              <div class="textoH1"><h1>Galería</h1></div>
+              <div class="textoH6">
+                <h6>Nos preocupamos por su comodidad y su bienestar, por ello nuestro espacio de trabajo esta creado para que usted se sienta como en un hotel 5 estrellas</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flechaBajar Index text-center">
+      <a class="flcBajar" href="#galeriaPrincipal">
+        <img src="/images/icon/iconScroll.svg" alt="icon scroll">
+      </a>
+    </section>
+    <section class="imgP"></section>
+  </section>
+  
+  <main class="galeriaPrincipal" id="galeriaPrincipal">
+    <div class="container">
+      <div class="row">               
+        <article class="col-12 col-lg-11 galeriaModelos" id="galeriaModelos">
+          <h2 class="text-center animado animacionS">Modelos</h2>
+          <p class="animado animacionS">Los estudios de fotografía y video son el lugar perfecto para que usted se sienta como en un hotel 5 estrellas</p>
+          <div class="sectionGaleria imgPrincipal">
+            <GalleryGrid images={modelosImages} galleryName="modelos" />
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+</MainLayout>
+
+<style>
+  .bienvenidosPrincipal.Galeria .imgP {
+    background-image: url(/images/backgrounds/hero_galeria.jpg);
+    background-attachment: fixed;
+    background-position: left top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
+
+<script>
+  import GLightbox from 'glightbox';
+  GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+  });
+</script>

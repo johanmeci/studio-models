@@ -1,0 +1,28 @@
+---
+export interface Props {
+  images: string[];
+  galleryName: string;
+}
+const { images, galleryName } = Astro.props;
+---
+
+<div class="gridGaleria cuartos animado animacionS">
+  {images.map(imageSrc => (
+    <a 
+      class="item item--medium animado animacionS glightbox" 
+      href={imageSrc}
+      data-gallery={galleryName}
+    >
+      <div class="gallery-item-bg" style={`background-image: url(${imageSrc})`}></div>
+    </a>
+  ))}
+</div>
+
+<style>
+  .gallery-item-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+</style>

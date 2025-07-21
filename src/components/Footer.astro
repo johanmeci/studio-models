@@ -1,0 +1,134 @@
+---
+// src/components/Footer.astro
+// Este componente no necesita JavaScript, solo HTML y los estilos de master.css
+---
+<footer class="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-lg-11 col-xl-10 mt-4 mb-5">
+              <h2>Contacto</h2>
+              <ul class="footerPaginas">
+                  <li><span>Empresa</span></li>
+                  <li><a href="/ventajas">Ventajas</a></li>
+                  <li><a href="/preguntas">Preguntas</a></li>
+                  <li><a href="/contacto">Contacto</a></li>
+              </ul>
+              <ul class="footerDatos">
+                  <li><span>Ayuda y Soporte</span></li>
+                  <li>
+                      <i class="fa fa-whatsapp"></i>
+                      <a href="https://api.whatsapp.com/send?phone=573227487143" target="_blank">(+57) 322 748 7143</a>
+                  </li>
+                  <li>
+                      <a href="mailto:info@estudiopenthouse.com">info@estudiopenthouse.com</a>
+                  </li>
+                  <li>Cali - Colombia</li>
+              </ul>
+              <ul class="footerAlianzas">
+                  <li><span>Alianzas</span></li>
+                  <li><a href="http://www.grupo-bedoya.com/" target="_blank">Grupo Bedoya Estudios</a></li>
+                  <li><a href="http://www.vipstudiocali.com/" target="_blank">VIP Studio Cali</a></li>
+                  <li><a href="https://www.trendstudios.co/" target="_blank">Trend Studios</a></li>
+              </ul>
+              <ul class="footerRedes">
+                  <li><span>Visítenos</span></li>
+                  <li>
+                      <a class="iconF" href="https://www.facebook.com/" target="_blank">
+                          <img src="/images/iconSocial/iconFacebook.svg" alt="facebook">
+                      </a>
+                      <a class="iconI" href="https://www.instagram.com/" target="_blank">
+                          <img src="/images/iconSocial/iconInstagram.svg" alt="instagram">
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="footerInferior col-12 col-lg-11">
+              <a class="iconF" href="https://www.facebook.com/" target="_blank">
+                  <img src="/images/iconSocial/iconFacebook.svg" alt="facebook">
+              </a>
+              <a class="iconI" href="https://www.instagram.com/" target="_blank">
+                  <img src="/images/iconSocial/iconInstagram.svg" alt="instagram">
+              </a>
+              <p>© Todos los Derechos Reservados</p>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<style>
+    .footerInferior {
+        p {
+            margin-right: auto;
+            margin-left: 0;
+        }
+    }
+    .footer {
+        background: linear-gradient(to right, #1c2033, #0d0e19);
+        color: #FFFFFF;
+        padding-top: 1.5rem;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    .footer h2 {
+        text-transform: uppercase;
+        font-weight: 300;
+        width: 100%;
+        text-align: center;
+        letter-spacing: 5px;
+        font-size: 2.3rem;
+        margin-top: .5rem;
+    }
+    .footer ul { list-style: none; padding: 0; }
+    .footer ul li { font-weight: 100; }
+    .footer ul li:first-of-type { margin-bottom: .5rem; }
+    .footer ul li i { margin-right: .5rem; }
+    .footer ul li span { font-weight: 300; text-transform: uppercase; }
+    .footer ul li a { text-decoration: none; color: #FFFFFF; }
+    .footerPaginas { border-top: 1px solid #47254F; margin-top: 1rem; padding-top: 1rem; text-align: center; }
+    .footerDatos { border-top: 1px solid #47254F; border-bottom: 1px solid #47254F; margin-top: .5rem; padding: 1rem 0; text-align: center; }
+    .footerAlianzas { border-bottom: 1px solid #47254F; text-align: center; padding: 1rem 0 .5rem; }
+    .footerRedes { display: none; }
+    .footerInferior { display: flex; flex-wrap: wrap; justify-content: space-around; padding: 0; }
+    .footerInferior p { font-weight: 100; width: 100%; text-align: center; margin-top: 1rem; font-size: .9rem; }
+    .footerInferior p a { border: none; padding: 0!important; }
+
+    /* ESTILOS DE ÍCONOS RESTAURADOS */
+    .footerInferior a { text-decoration: none; border: 1px solid #FFFFFF; background: transparent; padding: .5rem; border-radius: 50%; transition: all 0.5s ease; }
+    .footerInferior a img { width: 30px; }
+    .footerInferior a:first-of-type { padding: .5rem 1rem; } /* Facebook */
+    .footerInferior a:first-of-type img { width: 15px; }
+    .footerInferior a:nth-of-type(2) { padding: .6rem .6rem; } /* Instagram */
+    .footerInferior a:nth-of-type(2) img { width: 26px; }
+    .footerInferior a:nth-of-type(4) { padding: .5rem .6rem; } /* Youtube */
+    .footerInferior a:nth-of-type(4) img { width: 24px; }
+    
+    .footerInferior a.iconF, .footerInferior a.iconT, .footerInferior a.iconY { position: relative; }
+    .footerInferior a.iconF::after, .footerInferior a.iconT::after, .footerInferior a.iconY::after { content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(-8px 68px, rgba(255, 255, 255, 0) 23%, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 70%, #FFFFFF 100%); transition: all 0.5s ease; }
+    .footerInferior a.iconF:hover { background: #3B579D; border-color: #3B579D; }
+    .footerInferior a.iconI { position: relative; background: radial-gradient(-8px 68px, rgba(255, 255, 255, 0) 23%, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 70%, #FFFFFF 100%); z-index: 1; }
+    .footerInferior a.iconI::after { content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(-8px 68px, #ffda75 23%, #ff3a4a 46%, #ff3a4a 50%, #e518a1 70%, #6534e1 100%); z-index: 2; opacity: 0; transition: all 0.5s ease; }
+    .footerInferior a.iconI:hover::after { opacity: 1; }
+    .footerInferior a.iconI img { position: relative; z-index: 3; }
+    .footerInferior a.iconT:hover { background: #00ACED; border-color: transparent; }
+    .footerInferior a.iconY:hover { background: #FF0000; border-color: transparent; }
+
+    /* Media Query para Tablet (768px y más) */
+    @media (min-width: 768px) {
+        .footer { border-radius: 0 0 30px 30px; border-top: 2px solid #47254F; }
+        .footer h2 { margin-top: 0; margin-bottom: 1rem; }
+        .footer .container .row .col-12 { display: flex; flex-wrap: wrap; justify-content: space-around; }
+        .footer ul { margin: 0; border: none; text-align: left; }
+        .footer ul li:first-of-type { border-bottom: 1px solid #47254F; }
+        .footerRedes { display: block; padding: 1rem 0 .5rem 0; }
+        .footerRedes li:nth-of-type(2) { padding-top: .5rem; }
+        .footerRedes li a { margin-right: .3rem; }
+        .footerInferior { align-items: center; border-top: 2px solid #47254F; padding: .7rem 1rem; }
+        .footerInferior p { font-size: 1rem; width: max-content; margin: 0; }
+        .footerInferior .iconF, .footerInferior .iconI, .footerInferior .iconT, .footerInferior .iconY { display: none; }
+    }
+    
+    /* Media Query para Escritorio (992px y más) */
+    @media (min-width: 992px) {
+        .footer .container .row .col-12 { justify-content: space-evenly; }
+        .footerRedes li a { margin-right: .5rem; }
+    }
+</style>

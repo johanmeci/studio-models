@@ -1,11 +1,7 @@
----
-// src/components/Header.astro
----
-
 <header class="header fixed-top headerMobile">
   <div class="container">
     <a href="/">
-      <img class="logoPrincipal" src="/images/logoPenthouseStudio.png" alt="logo estudio penthouse">
+      <img class="logoPrincipal" src="/images/studio_models_logo.png" alt="logo Studio Models">
     </a>
     <a class="btnMenu contenedorBoton" href="#menuPrincipal">
       <div class="line"></div>
@@ -30,23 +26,13 @@
       </ul>
       <ul class="redesSociales">
         <li class="iconF">
-          <a href="https://www.facebook.com/GBGrupoBedoya/" target="_blank">
+          <a href="https://www.facebook.com/" target="_blank">
             <img src="/images/iconSocial/iconFacebook.svg" alt="icon facebook">
           </a>
         </li>
         <li class="iconI">
-          <a href="https://www.instagram.com/grupo.bedoya/" target="_blank">
+          <a href="https://www.instagram.com/" target="_blank">
             <img src="/images/iconSocial/iconInstagram.svg" alt="icon instagram">
-          </a>
-        </li>
-        <li class="iconT">
-          <a href="https://twitter.com/grupobedoya" target="_blank">
-            <img src="/images/iconSocial/iconTwitter.svg" alt="icon twitter">
-          </a>
-        </li>
-        <li class="iconY">
-          <a href="https://www.youtube.com/c/GrupoBedoyaEstudio" target="_blank">
-            <img src="/images/iconSocial/iconYoutube.svg" alt="icon youtube">
           </a>
         </li>
       </ul>
@@ -57,7 +43,7 @@
 <header class="header fixed-top headerDesktop">
   <div class="container">
     <a href="/">
-      <img id="logo" src="/images/logoPenthouseStudio.png" alt="logo estudio penthouse">
+      <img id="logo" src="/images/studio_models_logo.png" alt="logo Studio Models">
     </a>
     <nav id="menuDesktop">
       <ul class="ulMenu">
@@ -80,6 +66,12 @@
     </nav>
   </div>
 </header>
+
+<style>
+  header img {
+    width: 75px;
+  }
+</style>
 
 <script>
   // --- Lógica del Menú Móvil ---
