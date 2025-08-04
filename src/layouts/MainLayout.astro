@@ -23,13 +23,6 @@ const { title } = Astro.props;
   <script is:inline src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}></script>
 </head>
 <body class="body loaded">
-  <!-- <div id="loaderScreen">
-      <div id="loader">
-          <object data="/images/logoPhLoad.svg">
-              <embed src="/images/logoPhLoad.svg">
-          </object>
-      </div>
-  </div> -->
   <Header />
   <slot />
   <Footer />
