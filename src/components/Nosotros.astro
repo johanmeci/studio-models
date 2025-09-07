@@ -1,76 +1,91 @@
 <article class="nosotrosIndex" id="nosotrosIndex">
-    <div class="container">
-        <div class="row">
-            <h2 class="text-center animado animacionS">Nosotros</h2>
-            <div class="contenedorNosotros col-12 col-lg-11">
-                <section class="col-12 col-sm-10 col-md-6 animado animacionS">
-                    <p class="text-justify">
-                        Studio Models es un lugar único, donde la experiencia, la calidad y la comodidad son prioridades. Somos un estudio que se encarga de brindarle a sus modelos webcams todo lo que necesitan para lograr su éxito. Es un lugar donde la experiencia, la calidad y la comodidad son prioridades.
-                    </p>
-                </section>
-                <section class="contenedorSlider col-12 col-sm-10 col-md-6 animado animacionS" id="contenedorSlider">
-                    <div class="sliderNosotrosIndex" id="sliderNosotrosIndex" style="position: relative; width: 100%; background-image: url(/images/nosotros/nosotros.jpg); background-size: cover; background-position: center;">
-                        <div class="slide1"></div>
-                        <div class="slide2"></div>
-                        <div class="slide3"></div>
-                        <div class="slide4"></div>
-                    </div>
-                </section>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center animado">Nosotros</h2>
+      <div class="contenedorNosotros col-12 col-lg-11">
+        <section class="col-12 col-sm-10 col-md-6 animado">
+          <p class="text-justify">
+            Studio Models es un lugar único, donde la experiencia, la calidad y
+            la comodidad son prioridades. Somos un estudio que se encarga de
+            brindarle a sus modelos webcams todo lo que necesitan para lograr su
+            éxito. Es un lugar donde la experiencia, la calidad y la comodidad
+            son prioridades.
+          </p>
+        </section>
+        <section
+          class="contenedorSlider col-12 col-sm-10 col-md-6 animado"
+          id="contenedorSlider"
+        >
+          <div
+            class="sliderNosotrosIndex"
+            id="sliderNosotrosIndex"
+            style="position: relative; width: 100%; background-image: url(/images/nosotros/nosotros.jpg); background-size: cover; background-position: center;"
+          >
+            <div class="slide1"></div>
+            <div class="slide2"></div>
+            <div class="slide3"></div>
+            <div class="slide4"></div>
+          </div>
+        </section>
+      </div>
     </div>
+  </div>
 </article>
 
 <script>
-// Type assertion for the slider element
-const slider = document.getElementById("sliderNosotrosIndex") as HTMLElement | null;
+  // Type assertion for the slider element
+  const slider = document.getElementById(
+    "sliderNosotrosIndex"
+  ) as HTMLElement | null;
 
-// Function to adjust layout based on container width
-function ajustarLayout(target: HTMLElement) {
+  // Function to adjust layout based on container width
+  function ajustarLayout(target: HTMLElement) {
     if (!target) return;
-    
+
     const ancho = target.offsetWidth;
     target.style.height = `${ancho}px`;
-    
+
     // Type the NodeList as an array of HTMLElements
-    const slides = Array.from(target.querySelectorAll('[class^="slide"]')) as HTMLElement[];
+    const slides = Array.from(
+      target.querySelectorAll('[class^="slide"]')
+    ) as HTMLElement[];
     const altoDeSlide = ancho / 4;
 
     slides.forEach((slide: HTMLElement, index: number) => {
-        slide.style.height = `${altoDeSlide}px`;
-        slide.style.top = `${index * altoDeSlide}px`;
+      slide.style.height = `${altoDeSlide}px`;
+      slide.style.top = `${index * altoDeSlide}px`;
     });
-}
+  }
 
-if (slider) {
+  if (slider) {
     const imagenes = ["nosotros.jpg", "nosotros2.jpg"];
     let indiceActual = 0;
 
     function cambiarImagen() {
-        if (!slider) return;
-        indiceActual = (indiceActual + 1) % imagenes.length;
-        slider.style.backgroundImage = `url(/images/nosotros/${imagenes[indiceActual]})`;
+      if (!slider) return;
+      indiceActual = (indiceActual + 1) % imagenes.length;
+      slider.style.backgroundImage = `url(/images/nosotros/${imagenes[indiceActual]})`;
     }
 
     function animarSlider() {
-        if (!slider) return;
-        slider.classList.add("outNosotros");
-        
-        setTimeout(() => {
-            cambiarImagen();
-            if (slider) {
-                slider.classList.remove("outNosotros");
-            }
-        }, 900);
+      if (!slider) return;
+      slider.classList.add("outNosotros");
+
+      setTimeout(() => {
+        cambiarImagen();
+        if (slider) {
+          slider.classList.remove("outNosotros");
+        }
+      }, 900);
     }
 
     // Type the ResizeObserver callback
     const observer = new ResizeObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.target instanceof HTMLElement) {
-                ajustarLayout(entry.target);
-            }
-        });
+      entries.forEach((entry) => {
+        if (entry.target instanceof HTMLElement) {
+          ajustarLayout(entry.target);
+        }
+      });
     });
 
     // Start observing the slider
@@ -80,9 +95,186 @@ if (slider) {
     const intervalId = setInterval(animarSlider, 4000);
 
     // Clean up the interval and observer when the component is destroyed
-    document.addEventListener('astro:before-unmount', () => {
-        clearInterval(intervalId);
-        observer.disconnect();
+    document.addEventListener("astro:before-unmount", () => {
+      clearInterval(intervalId);
+      observer.disconnect();
     });
-}
+  }
 </script>
+
+<style>
+  .nosotrosIndex {
+    border-top: 2px solid #47254f;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    background: #1c2033;
+  }
+  .nosotrosIndex h2 {
+    margin-bottom: 0.8rem;
+    font-weight: 300;
+    font-variant: small-caps;
+    font-size: 2.3rem;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      #cb9f3d,
+      #fffc9e,
+      #c9ae2d,
+      #e7d074,
+      #d5b150,
+      #dfc793,
+      #c8953e
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+  .nosotrosIndex h2:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.6s 0.3s ease;
+    background-image: linear-gradient(
+      to right,
+      #cb9f3d,
+      #fffc9e,
+      #c9ae2d,
+      #e7d074,
+      #d5b150,
+      #dfc793,
+      #c8953e
+    );
+  }
+  .nosotrosIndex h2.animacionS:before {
+    opacity: 1;
+  }
+  .nosotrosIndex p {
+    font-weight: 100;
+    padding: 1rem;
+    background: rgba(71, 37, 79, 0.7);
+    border-radius: 0;
+    height: 100%;
+    box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+  .nosotrosIndex .contenedorNosotros {
+    padding: 0;
+  }
+  .nosotrosIndex .contenedorNosotros section:first-of-type,
+  .nosotrosIndex .contenedorNosotros section:nth-of-type(2) {
+    opacity: 0;
+    transition: opacity 0.6s 0.3s ease;
+  }
+  .nosotrosIndex .contenedorNosotros section:first-of-type.animacionS,
+  .nosotrosIndex .contenedorNosotros section:nth-of-type(2).animacionS {
+    opacity: 1;
+  }
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex {
+    width: 100%;
+    background-image: url(/images/nosotros/nosotros.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide1,
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide2,
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide3,
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide4 {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 72.5px;
+    background-color: #1c2033;
+  }
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide1 {
+    top: 0;
+    transition: all 0.5s ease;
+  }
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide2 {
+    transition: all 0.5s 0.2s ease;
+  }
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide3 {
+    transition: all 0.5s 0.3s ease;
+  }
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide4 {
+    bottom: 0;
+    transition: all 0.5s 0.4s ease;
+  }
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex.outNosotros .slide1,
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex.outNosotros .slide2,
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex.outNosotros .slide3 {
+    width: 100%;
+  }
+  .nosotrosIndex .contenedorSlider .sliderNosotrosIndex.outNosotros .slide4 {
+    width: 100.08%;
+  }
+  .nosotrosIndex .contenedorSlider img {
+    width: 100%;
+  }
+  @media (min-width: 576px) {
+    .nosotrosIndex h2 {
+      margin-bottom: 0;
+    }
+    .nosotrosIndex .contenedorNosotros section {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1.5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .nosotrosIndex {
+      background: #1c2033;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .nosotrosIndex h2 {
+      margin-bottom: 1.5rem;
+      font-size: 2.8rem;
+    }
+    .nosotrosIndex h2:before {
+      width: 60%;
+      left: 20%;
+    }
+    .nosotrosIndex p {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      box-shadow: none;
+    }
+    .nosotrosIndex .contenedorNosotros {
+      display: flex;
+    }
+    .nosotrosIndex .contenedorNosotros section {
+      margin-top: 0;
+    }
+    .nosotrosIndex .contenedorNosotros section:first-of-type {
+      transition-delay: 0.6s;
+    }
+    .nosotrosIndex .contenedorNosotros section:nth-of-type(2) {
+      transition-delay: 0.9s;
+    }
+    .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide1,
+    .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide2,
+    .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide3,
+    .nosotrosIndex .contenedorSlider .sliderNosotrosIndex .slide4 {
+      background-color: #1c2033;
+    }
+  }
+  @media (min-width: 992px) {
+    .nosotrosIndex .contenedorNosotros {
+      margin: 0 auto;
+    }
+    .nosotrosIndex h2 {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+    .nosotrosIndex p {
+      font-size: 1.1rem;
+    }
+  }
+</style>
