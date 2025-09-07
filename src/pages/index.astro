@@ -11,7 +11,7 @@ import Alianzas from '../components/Alianzas.astro';
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="contenidoTexto loaded">
+            <div class="contenidoTexto">
               <h1 class="text-center titulo1">Studio Models</h1>
               <h6 class="text-center titulo1">Un lugar moderno, exclusivo y sofisticado para tus modelos</h6>
             </div>
@@ -31,7 +31,7 @@ import Alianzas from '../components/Alianzas.astro';
 
   <Beneficios />
 
-  <Alianzas />
+  <!-- <Alianzas /> -->
 
   <article class="galeriaIndex">
     <div class="container">
@@ -67,6 +67,7 @@ import Alianzas from '../components/Alianzas.astro';
   }
 
   .galeriaIndex {
+    background: #1c2033;
     .item {
       &:nth-child(1) {
         background-image: url(/images/backgrounds/img_galeria_index.jpg);
