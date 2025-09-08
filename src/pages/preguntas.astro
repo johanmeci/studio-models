@@ -1,19 +1,21 @@
 ---
-
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
 
 const faqs = [
   {
-    question: '¿Quiénes pueden aplicar a la oferta?',
-    answer: 'Trabajamos únicamente con Damas mayores de 18 años, con alto carisma, atractivas, con excelente presentación personal, buen manejo de Internet, inteligentes, y lo más importante que sean comprometidas con su trabajo.'
+    question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
   },
   {
-    question: '¿Puedo ser modelo aunque no pueda hablar inglés?',
-    answer: 'Aunque conocer el idioma le traeria grandes beneficios, disponemos de monitoras que le ayudarán con la traducción de cualquier idioma, además le apoyarán durante el transcurso de la transmisión.'
+    question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
   },
   {
-    question: '¿Debo verme como una modelo para trabajar en VideoChat?',
-    answer: 'No, logicamente es necesario tener una buena presentación. Pero lo más importante es ser una persona amable, extrovertida y abierta a nuevas experiencias. Además contamos con entrenadoras de modelos que la guiaran durante todo su proceso de aprendizaje y posterior a este.'
+    question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
   },
 ];
 ---
@@ -24,10 +26,13 @@ const faqs = [
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="contenidoTexto loaded">
+            <div class="contenidoTexto">
               <div class="textoH1"><h1>Preguntas</h1></div>
               <div class="textoH6">
-                <h6>Si la respuesta que busca no se encuentra aquí, estaremos disponibles para resolver todas sus inquietudes...</h6>
+                <h6>
+                  Si la respuesta que busca no se encuentra aquí, estaremos
+                  disponibles para resolver todas sus inquietudes
+                </h6>
               </div>
             </div>
           </div>
@@ -36,7 +41,7 @@ const faqs = [
     </section>
     <section class="flechaBajar Index text-center">
       <a class="flcBajar" href="#preguntasPrincipal">
-        <img src="/images/icon/iconScroll.svg" alt="icon scroll">
+        <img src="/images/icon/iconScroll.svg" alt="icon scroll" />
       </a>
     </section>
     <section class="imgP"></section>
@@ -47,82 +52,393 @@ const faqs = [
       <div class="row">
         <h2 class="text-center animado">Preguntas Frecuentes</h2>
         <article class="col-12">
-          {faqs.map(faq => (
-            <details class="pregunta-item animado">
-              <summary class="pregunta">
-                <h5>{faq.question}</h5>
-              </summary>
-              <div class="respuesta">
-                <p>{faq.answer}</p>
-              </div>
-            </details>
-          ))}
+          {
+            faqs.map((faq) => (
+              <details class="pregunta-item">
+                <summary class="pregunta animado">
+                  <h5>{faq.question}</h5>
+                </summary>
+                <div class="respuesta">
+                  <p>{faq.answer}</p>
+                </div>
+              </details>
+            ))
+          }
         </article>
       </div>
     </div>
   </main>
 </MainLayout>
 
+<!-- <style>
+  .preguntasPrincipal {
+    border-top: 2px solid #47254f;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    background-color: #0d0e19;
+  }
+  .preguntasPrincipal h2 {
+    /* ... estilos para el título h2 ... */
+    font-weight: 300;
+    font-size: 2.3rem;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      #cb9f3d,
+      #fffc9e,
+      #c9ae2d,
+      #e7d074,
+      #d5b150,
+      #dfc793,
+      #c8953e
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bienvenidosPrincipal.Preguntas .imgP {
+    background-image: url(/images/backgrounds/hero_preguntas.jpg);
+    background-attachment: fixed;
+    background-position: right top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* Estilos para el contenedor del acordeón */
+  .pregunta-item {
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 80%; /* Ajusta el ancho máximo según tu gusto */
+    background-color: #1c2033;
+    border-radius: 12px;
+    box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  /* La parte que se puede clickear (la pregunta) */
+  .pregunta {
+    padding: 1rem;
+    cursor: pointer;
+    list-style: none; /* Oculta el triángulo por defecto */
+  }
+  .pregunta h5 {
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  /* Ocultar el marcador de flecha por defecto del <summary> */
+  .pregunta::-webkit-details-marker {
+    display: none;
+  }
+
+  /* La parte que se expande (la respuesta) */
+  .respuesta {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    border-top: 3px solid #0d0e19;
+  }
+  .respuesta p {
+    text-align: justify;
+    font-weight: 100;
+    margin-bottom: 0;
+  }
+</style> -->
+
 <style>
+  .bienvenidosPrincipal.Preguntas {
+    position: relative;
+    overflow: hidden;
+  }
+  .bienvenidosPrincipal.Preguntas .imgP {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/backgrounds/hero_preguntas.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .bienvenidosPrincipal.Preguntas .imgP.blurImg {
+    filter: blur(4px);
+  }
+  .bienvenidosPrincipal.Preguntas .imgP.blurImg:after {
+    opacity: 1;
+  }
+  .bienvenidosPrincipal.Preguntas .imgP:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(56, 26, 63, 0.3);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .bienvenidosPrincipal.Preguntas .textoPrincipal h1,
+  .bienvenidosPrincipal.Preguntas .textoPrincipal h6 {
+    text-align: center;
+  }
+  .preguntasPrincipal {
+    border-top: 2px solid #47254f;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    background: #1c2033 !important;
+  }
+  .preguntasPrincipal h2 {
+    font-weight: 300;
+    font-variant: small-caps;
+    font-size: 2.3rem;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      #cb9f3d,
+      #fffc9e,
+      #c9ae2d,
+      #e7d074,
+      #d5b150,
+      #dfc793,
+      #c8953e
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+  .preguntasPrincipal h2:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s 0.3s ease;
+    -o-transition: opacity 0.6s 0.3s ease;
+    transition: opacity 0.6s 0.3s ease;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#cb9f3d),
+      color-stop(#fffc9e),
+      color-stop(#c9ae2d),
+      color-stop(#e7d074),
+      color-stop(#d5b150),
+      color-stop(#dfc793),
+      to(#c8953e)
+    );
+    background-image: -webkit-linear-gradient(
+      left,
+      #cb9f3d,
+      #fffc9e,
+      #c9ae2d,
+      #e7d074,
+      #d5b150,
+      #dfc793,
+      #c8953e
+    );
+    background-image: -o-linear-gradient(
+      left,
+      #cb9f3d,
+      #fffc9e,
+      #c9ae2d,
+      #e7d074,
+      #d5b150,
+      #dfc793,
+      #c8953e
+    );
+    background-image: linear-gradient(
+      to right,
+      #cb9f3d,
+      #fffc9e,
+      #c9ae2d,
+      #e7d074,
+      #d5b150,
+      #dfc793,
+      #c8953e
+    );
+  }
+  .preguntasPrincipal h2.animacionS:before {
+    opacity: 1;
+  }
+  .preguntasPrincipal section {
+    -webkit-box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+  .preguntasPrincipal .pregunta {
+    cursor: pointer;
+    background-color: #47254f;
+    border-radius: 12px 12px 0 0;
+    padding: .8rem .5rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    display: block;
+    transition: opacity 0.6s 0.6s ease;
+  }
+  .preguntasPrincipal .pregunta.animacionS {
+    opacity: 1;
+  }
+  .preguntasPrincipal .pregunta h5 {
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0;
+    color: white;
+  }
+  .preguntasPrincipal .respuesta {
+    padding: .5rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #47254f;
+    border-top: 3px solid #0d0e19;
+    border-radius: 0 0 12px 12px;
+  }
+  .preguntasPrincipal .respuesta p {
+    text-align: justify;
+    font-weight: 100;
+    margin-bottom: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  @media (min-width: 576px) {
+    .preguntasPrincipal h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .bienvenidosPrincipal.Preguntas .textoPrincipal {
+      width: 50%;
+      margin-right: auto;
+    }
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto .textoH1 {
+      position: relative;
+      overflow: hidden;
+      margin-top: 9rem;
+      height: 63px;
+    }
+    .bienvenidosPrincipal.Preguntas
+      .textoPrincipal
+      .contenidoTexto
+      .textoH1
+      h1 {
+      margin-top: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto .textoH6 {
+      position: relative;
+      overflow: hidden;
+      height: 130px;
+    }
+    .bienvenidosPrincipal.Preguntas
+      .textoPrincipal
+      .contenidoTexto
+      .textoH6
+      h6 {
+      top: 0;
+      left: 0;
+    }
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto h1,
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto h6 {
+      text-align: left;
+      -webkit-transition: all 0.6s 0.5s cubic-bezier(0.4, 0.7, 0.42, 0.62);
+      -o-transition: all 0.6s 0.5s cubic-bezier(0.4, 0.7, 0.42, 0.62);
+      transition: all 0.6s 0.5s cubic-bezier(0.4, 0.7, 0.42, 0.62);
+    }
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto h6 {
+      width: 100%;
+    }
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto.loaded h1 {
+      bottom: 0;
+    }
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto.loaded h6 {
+      top: 0;
+    }
     .preguntasPrincipal {
-      border-top: 2px solid #47254F;
-      padding-top: 1rem;
-      padding-bottom: 2rem;
-      background-color: #0d0e19;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#1c2033),
+        to(#0d0e19)
+      );
+      background: -webkit-linear-gradient(left, #1c2033, #0d0e19);
+      background: -o-linear-gradient(left, #1c2033, #0d0e19);
+      background: linear-gradient(to right, #1c2033, #0d0e19);
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     .preguntasPrincipal h2 {
-      /* ... estilos para el título h2 ... */
-      font-weight: 300;
-      font-size: 2.3rem;
-      width: 100%;
-      background-image: linear-gradient(to right, #cb9f3d, #fffc9e, #c9ae2d, #e7d074, #d5b150, #dfc793, #c8953e);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
-    .bienvenidosPrincipal.Preguntas .imgP {
-        background-image: url(/images/backgrounds/hero_preguntas.jpg);
-        background-attachment: fixed;
-        background-position: right top;
-        background-size: cover;
-        background-repeat: no-repeat;
+    .preguntasPrincipal h2:before {
+      width: 60%;
+      left: 20%;
     }
-
-    /* Estilos para el contenedor del acordeón */
-    .pregunta-item {
-        margin: 1rem auto;
-        width: 100%;
-        max-width: 80%; /* Ajusta el ancho máximo según tu gusto */
-        background-color: #1c2033;
-        border-radius: 12px;
-        box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.5);
+    .preguntasPrincipal .pregunta {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
-    
-    /* La parte que se puede clickear (la pregunta) */
-    .pregunta {
-        padding: 1rem;
-        cursor: pointer;
-        list-style: none; /* Oculta el triángulo por defecto */
+    .preguntasPrincipal .pregunta h5 {
+      font-size: 1.2rem;
     }
-    .pregunta h5 {
-        font-weight: 300;
-        text-align: center;
-        margin-bottom: 0;
+    .preguntasPrincipal .respuesta {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-top-width: 4px;
+      border-top-color: #1b1f31;
     }
-    
-    /* Ocultar el marcador de flecha por defecto del <summary> */
-    .pregunta::-webkit-details-marker {
-        display: none;
+    .preguntasPrincipal .respuesta p {
+      font-size: 1.1rem;
     }
-
-    /* La parte que se expande (la respuesta) */
-    .respuesta {
-        padding: 0 1.5rem 1.5rem 1.5rem;
-        border-top: 3px solid #0d0e19;
+  }
+  @media (min-width: 992px) {
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto .textoH1 {
+      height: 80px;
     }
-    .respuesta p {
-        text-align: justify;
-        font-weight: 100;
-        margin-bottom: 0;
+    .bienvenidosPrincipal.Preguntas
+      .textoPrincipal
+      .contenidoTexto
+      .textoH6
+      h6 {
+      top: 0;
     }
+    .preguntasPrincipal h2 {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+    .preguntasPrincipal .pregunta h5 {
+      font-size: 1.3rem;
+    }
+    .preguntasPrincipal .respuesta {
+      border-top-color: #15172b;
+    }
+  }
+  @media (min-width: 1200px) {
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto.loaded h1 {
+      height: 72px;
+    }
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto.loaded h6 {
+      height: 90px;
+    }
+  }
+  @media (min-width: 1600px) {
+    .bienvenidosPrincipal.Preguntas .textoPrincipal .contenidoTexto h6 {
+      width: 85%;
+      margin-left: 0;
+    }
+  }
 </style>
