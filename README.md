@@ -4,6 +4,8 @@
 
 **Live Preview:** [https://studio-models.vercel.app/](https://studio-models.vercel.app/)
 
+[![Project Preview](https://johanmeneses.dev/assets/projects/studio_models.png)](https://studio-models.vercel.app/)
+
 This project is part of my professional portfolio, demonstrating skills in modern web development, external service integration, and performance optimization.
 
 ---
