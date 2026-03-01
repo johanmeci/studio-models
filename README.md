@@ -2,6 +2,8 @@
 
 **Studio Models** is a modern, exclusive, and sophisticated web platform designed for a modeling studio. This project was developed with a focus on user experience (UX), high performance, and a striking visual aesthetic that reflects the brand's exclusivity.
 
+**Live Preview:** [https://studio-models.vercel.app/](https://studio-models.vercel.app/)
+
 This project is part of my professional portfolio, demonstrating skills in modern web development, external service integration, and performance optimization.
 
 ---
