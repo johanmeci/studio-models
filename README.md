@@ -1,57 +1,57 @@
-# Studio Models - Landing Page Profesional
+# Studio Models - Professional Landing Page
 
-**Studio Models** es una plataforma web moderna, exclusiva y sofisticada diseñada para un estudio de modelos. Este proyecto fue desarrollado con un enfoque en la experiencia de usuario (UX), el rendimiento y una estética visual impactante que refleja la exclusividad de la marca.
+**Studio Models** is a modern, exclusive, and sophisticated web platform designed for a modeling studio. This project was developed with a focus on user experience (UX), high performance, and a striking visual aesthetic that reflects the brand's exclusivity.
 
-Este proyecto forma parte de mi portafolio profesional, demostrando habilidades en desarrollo web moderno, integración de servicios externos y optimización de rendimiento.
+This project is part of my professional portfolio, demonstrating skills in modern web development, external service integration, and performance optimization.
 
 ---
 
-## 🚀 Tecnologías Utilizadas
+## 🚀 Tech Stack
 
-- **[Astro](https://astro.build/)**: Framework web para la construcción de sitios rápidos y centrados en el contenido.
-- **JavaScript (ES6+)**: Lógica interactiva y manipulaciones del DOM.
-- **CSS3 (Moderno)**: Uso de nesting, Grid, Flexbox y animaciones personalizadas para un diseño responsive y elegante.
-- **[Resend](https://resend.com/)**: Integración de API para el manejo eficiente de envíos de formularios de contacto.
-- **Google reCAPTCHA v3**: Seguridad implementada en el lado del servidor para prevenir spam.
-- **Vercel**: Plataforma de despliegue optimizada para aplicaciones Astro.
+- **[Astro](https://astro.build/)**: A web framework for building fast, content-focused websites.
+- **JavaScript (ES6+)**: Interactive logic and DOM manipulation.
+- **CSS3 (Modern)**: Use of nesting, Grid, Flexbox, and custom animations for an elegant responsive design.
+- **[Resend](https://resend.com/)**: API integration for efficient contact form handling.
+- **Google reCAPTCHA v3**: Server-side security implementation to prevent spam.
+- **Vercel**: Optimized deployment platform for Astro applications.
 
-## ✨ Características Principales
+## ✨ Key Features
 
-- **Diseño Responsive:** Adaptabilidad total a dispositivos móviles, tablets y escritorio.
-- **Arquitectura de Componentes:** Desarrollo modular utilizando componentes de Astro para facilitar el mantenimiento.
-- **Galería Interactiva:** Visualización dinámica de contenido multimedia.
-- **Formulario de Contacto Funcional:** Validación en el servidor (API Endpoint) con envío de correos automáticos.
-- **Animaciones On-Scroll:** Experiencia fluida y dinámica mediante clases de animación activadas por el desplazamiento del usuario.
-- **Slider Dinámico:** Implementación personalizada utilizando `ResizeObserver` para un ajuste perfecto de proporciones.
+- **Responsive Design:** Fully adaptable to mobile devices, tablets, and desktops.
+- **Component Architecture:** Modular development using Astro components for easy maintenance.
+- **Interactive Gallery:** Dynamic visualization of multimedia content.
+- **Functional Contact Form:** Server-side validation (API Endpoint) with automated email delivery.
+- **On-Scroll Animations:** Fluid and dynamic user experience via scroll-triggered animation classes.
+- **Dynamic Slider:** Custom implementation using `ResizeObserver` for perfect aspect ratio adjustments.
 
-## 🛠️ Instalación y Configuración
+## 🛠️ Installation & Setup
 
-Para ejecutar este proyecto localmente, sigue estos pasos:
+To run this project locally, follow these steps:
 
-1. **Clonar el repositorio:**
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/tu-usuario/studio-models.git
+   git clone https://github.com/your-user/studio-models.git
    cd studio-models
    ```
 
-2. **Instalar dependencias:**
+2. **Install dependencies:**
    ```bash
    pnpm install
    ```
 
-3. **Configurar variables de entorno:**
-   Crea un archivo `.env` en la raíz del proyecto y añade tus credenciales:
+3. **Configure environment variables:**
+   Create a `.env` file in the project root and add your credentials:
    ```env
-   RESEND_API_KEY=tu_api_key_aqui
-   RECAPTCHA_SECRET_KEY=tu_secret_key_aqui
+   RESEND_API_KEY=your_api_key_here
+   RECAPTCHA_SECRET_KEY=your_secret_key_here
    ```
 
-4. **Iniciar servidor de desarrollo:**
+4. **Start the development server:**
    ```bash
    pnpm dev
    ```
-   El sitio estará disponible en `http://localhost:4321`.
+   The site will be available at `http://localhost:4321`.
 
 ---
 
-Desarrollado con ❤️ por [Johan Meneses](https://johanmeneses.dev)
+Developed with ❤️ by [Johan Meneses](https://johanmeneses.dev)
