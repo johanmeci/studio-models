@@ -12,5 +12,8 @@
     "@astrojs/vercel": "8.2.3",
     "astro": "latest",
     "resend": "4.7.0"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
   }
 }

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import iconScroll from '@/assets/images/icon/iconScroll.svg';
 import MainLayout from '../layouts/MainLayout.astro';
 import GalleryGrid from '../components/GalleryGrid.astro';
 
@@ -27,7 +29,7 @@ const modelosImages = [
     </section>
     <section class="flechaBajar Index text-center">
       <a class="flcBajar" href="#galeriaPrincipal">
-        <img src="/images/icon/iconScroll.svg" alt="icon scroll">
+        <Image src={iconScroll} alt="icon scroll" />
       </a>
     </section>
     <section class="imgP"></section>
