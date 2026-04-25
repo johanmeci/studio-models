@@ -2,9 +2,6 @@
 // src/components/Footer.astro
 // Este componente no necesita JavaScript, solo HTML y los estilos de master.css
 import '@/styles/components/Footer.scss';
-import { Image } from 'astro:assets';
-import iconFacebook from '@/assets/images/iconSocial/iconFacebook.svg';
-import iconInstagram from '@/assets/images/iconSocial/iconInstagram.svg';
 ---
 <footer class="footer">
   <div class="container">
@@ -37,20 +34,20 @@ import iconInstagram from '@/assets/images/iconSocial/iconInstagram.svg';
           <li><span>Visítenos</span></li>
           <li>
             <a class="iconF" href="https://www.facebook.com/" target="_blank">
-              <Image src={iconFacebook} alt="facebook" />
+              <img src="/images/iconSocial/iconFacebook.svg" alt="facebook" />
             </a>
             <a class="iconI" href="https://www.instagram.com/" target="_blank">
-              <Image src={iconInstagram} alt="instagram" />
+              <img src="/images/iconSocial/iconInstagram.svg" alt="instagram" />
             </a>
           </li>
         </ul>
       </div>
       <div class="footerInferior col-12 col-lg-11">
         <a class="iconF" href="https://www.facebook.com/" target="_blank">
-          <Image src={iconFacebook} alt="facebook" />
+          <img src="/images/iconSocial/iconFacebook.svg" alt="facebook" />
         </a>
         <a class="iconI" href="https://www.instagram.com/" target="_blank">
-          <Image src={iconInstagram} alt="instagram" />
+          <img src="/images/iconSocial/iconInstagram.svg" alt="instagram" />
         </a>
         <p>Website developed during my time working with the company. Use only for personal portfolio.</p>
       </div>

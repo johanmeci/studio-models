@@ -1,9 +1,5 @@
 ---
 import '@/styles/components/Header.scss';
-import { Image } from 'astro:assets';
-import logoImg from '@/assets/images/studio_models_logo.png';
-import iconFacebook from '@/assets/images/iconSocial/iconFacebook.svg';
-import iconInstagram from '@/assets/images/iconSocial/iconInstagram.svg';
 
 const navLinks = [
   { name: 'Inicio', path: '/' },
@@ -16,7 +12,7 @@ const navLinks = [
 <header class="header fixed-top headerMobile">
   <div class="container">
     <a href="/">
-      <Image class="logoPrincipal" src={logoImg} alt="logo Studio Models" />
+      <img class="logoPrincipal" src="/images/studio_models_logo.png" alt="logo Studio Models" />
     </a>
     <a class="btnMenu contenedorBoton" href="#menuPrincipal">
       <div class="line"></div>
@@ -32,12 +28,12 @@ const navLinks = [
       <ul class="redesSociales">
         <li class="iconF">
           <a href="https://www.facebook.com/" target="_blank">
-            <Image src={iconFacebook} alt="icon facebook" />
+            <img src="/images/iconSocial/iconFacebook.svg" alt="icon facebook" />
           </a>
         </li>
         <li class="iconI">
           <a href="https://www.instagram.com/" target="_blank">
-            <Image src={iconInstagram} alt="icon instagram" />
+            <img src="/images/iconSocial/iconInstagram.svg" alt="icon instagram" />
           </a>
         </li>
       </ul>
@@ -48,7 +44,7 @@ const navLinks = [
 <header class="header fixed-top headerDesktop">
   <div class="container">
     <a href="/">
-      <Image id="logo" src={logoImg} alt="logo Studio Models" />
+      <img id="logo" src="/images/studio_models_logo.png" alt="logo Studio Models" />
     </a>
     <nav id="menuDesktop">
       <ul class="ulMenu">
