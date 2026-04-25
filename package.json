@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "8.2.3",
-    "astro": "latest",
+    "@astrojs/vercel": "8.2.7",
+    "astro": "5.13.5",
     "resend": "4.7.0"
   },
   "devDependencies": {
